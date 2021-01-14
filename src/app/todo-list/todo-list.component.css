@@ -1,0 +1,25 @@
+mat-form-field{
+    margin: 5px;
+    width: 300px;
+}
+
+.basic-effects {
+    cursor:pointer;
+}
+
+.strike-text {
+    text-decoration: line-through;
+    cursor: pointer;
+}
+
+.container {
+    display: flex; 
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cells {
+    color:black;
+    flex-grow: 1;
+}

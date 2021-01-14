@@ -1,0 +1,9 @@
+<h1 class="mat-display-1">Dashboard</h1>
+
+<p>Latest Update: {{ updateTimeStamp | async | date:'medium'  }}</p>
+
+<p>Total Items: {{ myContent.length }}</p>
+
+<button mat-raised-button 
+        color="primary" 
+        (click)="emptyTodoList()">Delete All</button>

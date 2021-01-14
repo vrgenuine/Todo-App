@@ -1,0 +1,27 @@
+<h1 class="mat-display-1">Todo List</h1>
+
+<form [formGroup]="form">
+    <mat-form-field formGroupName="todoForm">
+        <mat-label class="basic-effects">My Todo</mat-label>
+        <input matInput 
+            placeholder="Anything to do..." 
+            formControlName="todoControl"
+            maxlength="25" #todoItem required>
+        <mat-hint>{{todoItem.value?.length || 0}}/25</mat-hint>
+        <mat-error *ngIf="todoControlErrors"></mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="addTodo(todoItem)">Add</button>
+</form>
+
+
+<mat-list role="list" class="container">
+    <mat-list-item role="listitem" *ngFor="let item of todoArrayList | async ">
+        <label class="basic-effects cells strike-text" 
+                [class.strike-text] = "item.todoDone"
+                (click)="strikeTodo(item)">
+                {{ item.todoContent }}</label>
+        
+        <button mat-raised-button
+                color="primary" (click)="removeTodo(item)">Remove</button>
+    </mat-list-item>
+</mat-list>
